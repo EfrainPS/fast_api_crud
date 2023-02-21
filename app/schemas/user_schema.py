@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from .item_schema import Item
+from .posts_schema import Post
 
 
 class UserBase(BaseModel):
@@ -13,7 +13,7 @@ class UserCreate(UserBase):
 class User(UserBase):
     id: int
     is_active: bool
-    items: list[Item] = []
+    post: list[Post] = []
 
     class Config:
         orm_mode = True
