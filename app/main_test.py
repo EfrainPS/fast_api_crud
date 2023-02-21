@@ -4,8 +4,8 @@ from .routers.posts_router import posts_router
 
 app = FastAPI()
 
-app.include_router(user_router)
-app.include_router(posts_router)
 
-#if __name__ == '__main__':
-#    uvicorn.run(app)
+from .config.database import engine
+from .models import wadua_db_model #test
+
+wadua_db_model.Base.metadata.create_all(bind=engine)

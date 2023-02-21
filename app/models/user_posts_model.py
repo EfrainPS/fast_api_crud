@@ -12,6 +12,7 @@ class User(Base):
     password = Column(String(255))
     is_active = Column(Boolean, default=True)
 
+    ## First param is the class and the second is the relationship created in the children table (class)
     post = relationship("Post", back_populates="owner")
 
 
@@ -24,4 +25,5 @@ class Post(Base):
     content = Column(String(4000), index=True)
     owner_id = Column(Integer, ForeignKey("users.id"))
 
+    ## First param is the class and the second is the relationship created in the children table (class)
     owner = relationship("User", back_populates="post")

@@ -22,6 +22,8 @@ Fourth, run the project
 
     `uvicorn app.main:app --reload`
 
+    TEST -> `uvicorn app.main_test:app --reload`
+
 Fifth, enjoy and work.
 
 
